@@ -1,5 +1,3 @@
-// Has all of the logic to login or sign up
-
 const router = require('express').Router();
 const { User } = require('../../models');
 
