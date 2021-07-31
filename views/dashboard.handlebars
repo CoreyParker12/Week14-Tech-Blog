@@ -1,8 +1,12 @@
-<!-- Loop over each object in the projects array -->
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<div>
+  <div>
     <h2>
-        You have reached the dashboard, {{user.name}}.
+      You have reached the dashboard, {{name}}.
     </h2>
+    <div>
+      {{#each posts as |post|}}
+      {{> posts-basic}}
+      {{/each}}
+    </div>
   </div>
 </div>
