@@ -1,0 +1,16 @@
+
+<div>
+    {{title}}
+</div>
+<div>
+    {{user.name}}
+</div>
+<div>
+    {{content}}
+</div>
+<p>
+          {{#each comments as |comment|}}
+      {{> comments-display}}
+      {{/each}}
+</p>
+

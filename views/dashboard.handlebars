@@ -1,11 +1,11 @@
 <div>
   <div>
-    <h2>
-      You have reached the dashboard, {{name}}.
-    </h2>
+    <p>
+      You have reached the dashboard, {{name}}. Here you can see all of your posts.
+    </p>
     <div>
       {{#each posts as |post|}}
-      {{> posts-basic}}
+      {{> posts-display}}
       {{/each}}
     </div>
   </div>

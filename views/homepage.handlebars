@@ -1,8 +1,13 @@
-<!-- Loop over each object in the projects array -->
-<div class="project">
+<div>
   <div>
-    <h2>
-        You are on the homepage of the template.
-    </h2>
+    <p>
+      You have reached the dashboard, {{name}}. Here you can see all of the posts by every user.
+    </p>
+    <div>
+      {{#each posts as |post|}}
+      {{> posts-display}}
+      {{/each}}
+    </div>
   </div>
 </div>
+
