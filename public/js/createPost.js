@@ -16,10 +16,10 @@ const createPostHandler = async (event) => {
           console.log(res);
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        alert(res.statusText);
       }
     }
 };
 
 document
-.getElementById('#create-post').addEventListener('submit', createPostHandler);
+.querySelector('.create-post').addEventListener('submit', createPostHandler);

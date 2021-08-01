@@ -9,8 +9,23 @@
     {{content}}
 </div>
 <p>
-          {{#each comments as |comment|}}
-      {{> comments-display}}
-      {{/each}}
+    {{#each comments as |comment|}}
+    {{> comments-display}}
+    {{/each}}
 </p>
+
+
+<form class="create-comment">
+    <div>
+        <label for="Comment">Comment</label>
+        <input id="comment"/>
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+
+<script src="/js/createComment.js"></script> 
+
+
 
