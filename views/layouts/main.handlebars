@@ -5,32 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Template Website</title>
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
 </head>
 
 <body>
   <div>
     <header>
-      <h1>
-        <a href="/">Template Website</a>
+      <h1 id='website-logo'>
+        <a href="/">Tech Blog</a>
       </h1>
-      <nav>
+      <nav class="navbar">
         <ul><a href="/">Home</a></ul>
         {{#if logged_in}}
           <ul><a href="/dashboard">Dashboard</a></ul>
-          <button id="logout">Logout</button>
+          <ul><button class="no-button" id="logout">Logout</button></ul>
         {{else}}
           <ul><a href="/login">Login</a></ul>
         {{/if}}
       </nav>
     </header>
     <main>
-      <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
   <!-- Render script for logged in users only -->
