@@ -2,11 +2,13 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-    });
+    
+    // const userData = await User.findByPk(req.session.user_id, {
+    //   attributes: { exclude: ['password'] },
+    // });
+
 
     const postData = await Post.findAll({
       include: [
@@ -18,12 +20,11 @@ router.get('/', withAuth, async (req, res) => {
     });
 
     const posts = postData.map((xxx) => xxx.get({ plain: true }));
-    const users = userData.get({ plain: true });
 
     res.render('homepage', { 
       posts,
-      ...users, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -94,12 +95,19 @@ router.get('/posts/:id', withAuth, async (req, res) => {
       ...posts, 
       comments,
       logged_in: req.session.logged_in,
-      user_id: req.session.user_id, 
+      //user_id: req.session.user_id, 
     });
   } catch (err) {
     res.status(500).json(err);
   }
 })
+
+router.get('/posts', withAuth, async (req, res) => {
+  res.render('new-post', {
+    logged_in: req.session.logged_in,
+  });
+  return; 
+});
 
 
 router.get('/login', async (req, res) => {

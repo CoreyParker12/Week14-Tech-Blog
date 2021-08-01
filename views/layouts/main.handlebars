@@ -15,12 +15,11 @@
         <a href="/">Template Website</a>
       </h1>
       <nav>
+        <ul><a href="/">Home</a></ul>
         {{#if logged_in}}
-          <ul><a href="/">Home</a></ul>
           <ul><a href="/dashboard">Dashboard</a></ul>
-          <button class="no-button" id="logout">Logout</button>
+          <button id="logout">Logout</button>
         {{else}}
-          <ul><a href="/">Home</a></ul>
           <ul><a href="/login">Login</a></ul>
         {{/if}}
       </nav>
@@ -36,7 +35,7 @@
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="/js/logout.js"></script> 
   {{/if}}
 </body>
 
