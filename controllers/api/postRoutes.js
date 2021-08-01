@@ -16,4 +16,13 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.delete('/:id', (req, res) => {
+      const deletePost = Post.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.status(200).json(deletePost);
+  });
+
 module.exports = router;

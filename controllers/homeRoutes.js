@@ -48,7 +48,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         },
       ],
     });
-
+    
     const posts = postData.map((xxx) => xxx.get({ plain: true }));
     const users = userData.get({ plain: true });
 
@@ -60,6 +60,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+
 });
 
 
