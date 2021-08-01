@@ -11,7 +11,7 @@ const deletePostHandler = async (event) => {
 
     if (res.ok) {
         document.location.replace('/dashboard');
-        //window.href
+
 
     } else {
         alert(res.statusText);

@@ -14,7 +14,7 @@
     {{/each}}
 </p>
 
-
+{{!-- <div>
 <form class="create-comment">
     <div>
         <label for="Comment">Comment:</label>
@@ -24,17 +24,24 @@
         <button type="submit">Add Comment</button>
     </div>
 </form>
+</div>
 
+<div>
 <form class="delete-post">
     <button type="submit">Delete Post</button>
 </form>
+</div> --}}
+
 <div>
-    <button type="submit">Update Post</button>
+<form>
+    <a href="/updatepost/{{id}}">Update Post</a>   
+</form>
 </div>
 
+{{!-- <script src="/js/updatePost.js"></script> --}}
+{{!-- <script src="/js/createComment.js"></script> 
+<script src="/js/deletePost.js"></script> --}}
 
-<script src="/js/createComment.js"></script> 
-<script src="/js/deletePost.js"></script> 
 
 
 

@@ -110,6 +110,28 @@ router.get('/posts', withAuth, async (req, res) => {
   return; 
 });
 
+router.get('/updatepost/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+    const posts = postData.get ({ plain: true});
+
+    res.render('update-post', {
+      ...posts,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route

@@ -25,4 +25,23 @@ router.delete('/:id', (req, res) => {
       res.status(200).json(deletePost);
   });
 
+  router.put('/:id', async (req, res) => {
+    try {
+      const updatePost = await Post.update(
+        {
+          title: req.body.title,
+          content: req.body.content,
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
+      res.status(200).json(updatePost);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
 module.exports = router;
