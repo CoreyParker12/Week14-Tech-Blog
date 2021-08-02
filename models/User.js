@@ -35,6 +35,11 @@ User.init(
         len: [4],
       },
     },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     hooks: {

@@ -31,6 +31,7 @@
             </div>
         </form>
     </div>
+    {{#if user_is_me}}
     <div class="single-post-flex">
         <div class="single-post-buttons-spacing single-post-buttons-LR">
             <form class="delete-post">
@@ -43,7 +44,7 @@
             </form>
         </div>
     </div>
-
+    {{/if}}
 </div>
 
 <script src="/js/createComment.js"></script> 

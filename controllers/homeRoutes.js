@@ -58,6 +58,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 });
 
+// Individual Post Page Route
 
 router.get('/posts/:id', withAuth, async (req, res) => {
   try {
@@ -69,8 +70,6 @@ router.get('/posts/:id', withAuth, async (req, res) => {
         },
       ],
     });
-    
-    const posts = postData.get({ plain: true });
 
     const commentData = await Comment.findAll({
       where: {
@@ -84,14 +83,21 @@ router.get('/posts/:id', withAuth, async (req, res) => {
       ],
     });
     
+    const posts = postData.get({ plain: true });
+
     const comments = commentData.map((xxx) => xxx.get({ plain: true })
     );
+
+    // if (posts.user_id === req.session.user_id) {
+    //   req.session.user_is_me = true;
+    // };
 
     res.render('single-post', {
       ...posts, 
       comments,
       logged_in: req.session.logged_in,
-      //user_id: req.session.user_id, 
+      user_id: req.session.user_id,
+      user_is_me: req.session.user_is_me,
     });
   } catch (err) {
     res.status(500).json(err);
