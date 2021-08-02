@@ -88,9 +88,9 @@ router.get('/posts/:id', withAuth, async (req, res) => {
     const comments = commentData.map((xxx) => xxx.get({ plain: true })
     );
 
-    // if (posts.user_id === req.session.user_id) {
-    //   req.session.user_is_me = true;
-    // };
+    if (posts.user_id === req.session.user_id) {
+      req.session.user_is_me = true;
+    };
 
     res.render('single-post', {
       ...posts, 
