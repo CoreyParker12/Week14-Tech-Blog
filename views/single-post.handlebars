@@ -1,10 +1,12 @@
-
 <div>
     <div class="single-post-title">
         {{title}}
     </div>
     <div class="single-post-author">
         Written By: {{user.name}}
+    </div>
+    <div class="single-post-author">
+        Date: {{format_date date_created}}
     </div>
     <div class="single-post-content">
         {{content}}
@@ -32,6 +34,7 @@
         </form>
     </div>
     {{#if user_is_me}}
+    {{#if logged_in}}
     <div class="single-post-flex">
         <div class="single-post-buttons-spacing single-post-buttons-LR">
             <form class="delete-post">
@@ -45,10 +48,14 @@
         </div>
     </div>
     {{/if}}
+    {{/if}}
 </div>
 
-<script src="/js/createComment.js"></script> 
+<script src="/js/createComment.js"></script>
+
+{{#if user_is_me}}
 <script src="/js/deletePost.js"></script>
+{{/if}}
 
 
 

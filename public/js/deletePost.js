@@ -1,3 +1,4 @@
+// Deletes a post
 const deletePostHandler = async (event) => {
     event.preventDefault();
     

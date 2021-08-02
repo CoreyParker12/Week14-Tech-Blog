@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Find all posts and display on homepage
+
 router.get('/', async (req, res) => {
   try {
     
@@ -26,6 +28,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Find all posts by the logged in user
+
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -34,7 +38,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
       },
       include: [
         {
@@ -50,7 +54,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', { 
       posts,
       ...users, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -58,7 +62,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 });
 
-// Individual Post Page Route
+// Find a single post that the user clicked on
 
 router.get('/posts/:id', withAuth, async (req, res) => {
   try {
@@ -85,11 +89,13 @@ router.get('/posts/:id', withAuth, async (req, res) => {
     
     const posts = postData.get({ plain: true });
 
-    const comments = commentData.map((xxx) => xxx.get({ plain: true })
-    );
+    const comments = commentData.map((xxx) => xxx.get({ plain: true }));
 
     if (posts.user_id === req.session.user_id) {
       req.session.user_is_me = true;
+      console.log('hi')
+    } else {
+      console.log('false');
     };
 
     res.render('single-post', {
@@ -104,12 +110,16 @@ router.get('/posts/:id', withAuth, async (req, res) => {
   }
 })
 
+// Create a new post
+
 router.get('/posts', withAuth, async (req, res) => {
   res.render('new-post', {
     logged_in: req.session.logged_in,
   });
   return; 
 });
+
+// Update a post
 
 router.get('/updatepost/:id', withAuth, async (req, res) => {
   try {
@@ -133,9 +143,9 @@ router.get('/updatepost/:id', withAuth, async (req, res) => {
   }
 });
 
+// Login
 
 router.get('/login', async (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;

@@ -1,3 +1,4 @@
+// Updates a post
 const updatePostHandler = async (event) => {
     event.preventDefault();
 

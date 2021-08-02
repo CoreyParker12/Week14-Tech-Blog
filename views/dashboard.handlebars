@@ -1,12 +1,10 @@
 <div>
+  <p id="welcome">
+    Welcome, {{name}}! Here you can see all of your posts.
+  </p>
   <div>
-    <p id="welcome">
-      Welcome, {{name}}! Here you can see all of your posts.
-    </p>
-    <div>
-      {{#each posts as |post|}}
-      {{> posts-display}}
-      {{/each}}
-    </div>
+    {{#each posts as |post|}}
+    {{> posts-display}}
+    {{/each}}
   </div>
 </div>

@@ -1,3 +1,5 @@
+
+// Creates a new comment
 const createCommentHandler = async (event) => {
     event.preventDefault();
   

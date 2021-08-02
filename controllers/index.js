@@ -6,7 +6,7 @@ const homeRoutes = require('./homeRoutes');
 // Takes you to homeRoutes file
 router.use('/', homeRoutes);
 
-// Taks you to api folder, has index and userRoutes inside
+// Taks you to api folder, has index, userRoutes, and commentRoutes inside
 router.use('/api', apiRoutes);
 
 module.exports = router;

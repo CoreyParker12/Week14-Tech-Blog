@@ -1,7 +1,7 @@
 /* Global */
 
 #content-width {
-    width: 90%;
+    width: 70%;
     margin: auto;
 }
 
@@ -125,6 +125,7 @@ header {
 .single-post-buttons {
     font-size: 24px;
     font-weight: bold;
+    border-top: solid black 2px;
 }
 
 .single-post-buttons-spacing {
