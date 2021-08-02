@@ -30,5 +30,5 @@ Email: coreyparker012@gmail.com
 
 ## Homepage
 
-![Homepage](public\images\homepage.JPG)
+![Homepage](public/images/homepage.JPG)
 
