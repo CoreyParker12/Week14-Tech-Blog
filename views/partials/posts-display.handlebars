@@ -1,11 +1,13 @@
-<div>
-  <a href="/posts/{{id}}">
-    <div>
-        <h3>{{title}}</h3>
-    </div>
-  </a>
+<div class="posts-display">
   <div>
-    <p>Author: {{user.name}}</p>
-    <p>{{content}}</p>
+    <a href="/posts/{{id}}">
+      <div class="posts-title">
+          <p>{{title}}</p>
+      </div>
+    </a>
+    <div>
+      <p class="posts-spacing">Author: {{user.name}}</p>
+      <p class="posts-spacing">{{content}}</p>
+    </div>
   </div>
 </div>

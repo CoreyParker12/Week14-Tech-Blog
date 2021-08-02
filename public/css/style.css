@@ -1,10 +1,19 @@
+/* Global */
+
+#content-width {
+    width: 90%;
+    margin: auto;
+}
+
 body {
     font-family: 'Special Elite';
     width: 80%;
+    background-color: rgb(231, 231, 231);
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:visited {
@@ -15,9 +24,40 @@ a:hover {
     color: gray;
 }
 
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    font-size: 100%;
+    font-family: 'Special Elite';
+}
+
+.no-button:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.extra-padding {
+    padding-left: 20px;
+}
+
+/* Header */
+
 header {
     display: flex;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0 20px 0;
 }
 
 #website-logo {
@@ -36,22 +76,86 @@ header {
     vertical-align: middle;
 }
 
-.nav-link {
-    text-align: center;
+/* Main */
+
+
+.posts-display {
+    padding-top: 20px;
 }
 
-.no-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    font-size: 100%;
-    font-family: 'Special Elite';
-  }
-  
-  .no-button:hover {
-    color: gray;
-    text-decoration: none;
-  }
+.posts-spacing {
+    padding: 5px 0 5px 0;
+}
+
+.posts-title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* Single Post */
+
+.single-post-title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0 10px 0;
+}
+
+.single-post-author {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.single-post-content {
+    padding: 20px 0 30px 0;
+    font-size: 18px;
+}
+
+.single-post-comments-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.single-post-comments {
+    padding: 15px 0px 10px 0;
+    margin: 0 0 0 30px;
+}
+
+.single-post-buttons {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.single-post-buttons-spacing {
+    padding: 20px 0 20px 0;
+}
+
+.single-post-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.comment-spacing {
+    padding: 20px 0 0 0;
+}
+
+.single-post-buttons-LR {
+    padding: 0 20px 0 0;
+}
+
+
+/* Dashboard */
+
+#welcome {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Update Post */
+
+.update-post-spacing {
+    padding: 20px 0 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+}

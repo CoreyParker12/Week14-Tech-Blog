@@ -1,19 +1,8 @@
-
-
 <div>
-  <div>
-    <p>
-      You have reached the homepage. Here you can see all of the posts by every user.
-    </p>
-
-    <div>
-      {{#each posts as |post|}}
-      {{> posts-display}}
-      {{/each}}
-    </div>
-  </div>
-  {{#if logged_in}}
-  <a href="/posts"><button>Add Post</button></a>
-  {{/if}}
+  {{#each posts as |post|}}
+  {{> posts-display}}
+  {{/each}}
 </div>
+
+
 

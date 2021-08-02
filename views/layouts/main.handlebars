@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite">
 </head>
 
-<body>
+<body id="content-width">
   <div>
     <header>
       <h1 id='website-logo'>
@@ -21,6 +21,7 @@
         {{#if logged_in}}
           <ul><a href="/dashboard">Dashboard</a></ul>
           <ul><button class="no-button" id="logout">Logout</button></ul>
+            <ul><a href="/posts"><button class="no-button">Add Post</button></a></ul>
         {{else}}
           <ul><a href="/login">Login</a></ul>
         {{/if}}
