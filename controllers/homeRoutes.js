@@ -93,10 +93,11 @@ router.get('/posts/:id', withAuth, async (req, res) => {
 
     if (posts.user_id === req.session.user_id) {
       req.session.user_is_me = true;
-      console.log('hi')
     } else {
-      console.log('false');
+      req.session.user_is_me = false;
     };
+
+    console.log(req.session);
 
     res.render('single-post', {
       ...posts, 
